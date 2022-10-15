@@ -1,0 +1,79 @@
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  h1 {
+    @apply text-2xl font-extrabold text-white p-5 uppercase text-left;
+  }
+
+  h2 {
+    @apply text-2xl font-bold text-white p-8 text-center;
+  }
+
+  h3 {
+    @apply text-lg font-bold text-white text-left pt-5 pb-8;
+  }
+
+  p {
+    @apply text-base font-normal text-white pb-5;
+  }
+
+  section {
+    @apply w-full h-auto bg-gunmetal;
+  }
+
+  article {
+    @apply p-10;
+  }
+
+  nav {
+    @apply fixed top-0 right-0 p-5;
+  }
+
+  img {
+    @apply w-screen;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-blue {
+    @apply bg-phlox hover:bg-lightgreen text-white hover:text-black font-bold xs:py-2 xs:px-4 rounded cursor-pointer md:w-2/6 md:self-center md:py-4 md:px-6;
+  }
+
+  .headertext {
+    @apply sm:text-2xl lg:text-3xl;
+  }
+
+  .navtext {
+    @apply text-white text-lg font-bold;
+  }
+
+  .section2 {
+    @apply flex flex-col content-center justify-center;
+  }
+
+  .section2article {
+    @apply w-full flex flex-col;
+  }
+
+  .section2article h3 {
+    @apply xs:text-left md:text-center;
+  }
+
+  .section3 {
+    @apply flex xs:flex-col md:flex-row content-center justify-center;
+  }
+
+  .section3article {
+    @apply w-full;
+  }
+
+  .section4 {
+    @apply mb-[30px];
+  }
+}

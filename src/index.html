@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css"
+      rel="stylesheet"
+    />
+    <style>
+      .video-js .vjs-volume-level,
+      .video-js .vjs-play-progress,
+      .video-js .vjs-slider-bar {
+        background: rgba(209, 82, 243, 1);
+      }
+      .video-js .vjs-control-bar,
+      .video-js .vjs-big-play-button,
+      .video-js .vjs-menu-button .vjs-menu-content {
+        /* IE8 - has no alpha support */
+        background-color: rgba(29, 38, 53, 1);
+        /* Opacity: 1.0 = 100%, 0.0 = 0% */
+        background-color: rgba(29, 38, 53, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper flex flex-col">
+      <section
+        class="bg-cover h-screen bg-no-repeat bg-center bg-[url('/note-thanun-GI10ZiPO_3w-unsplash.jpg')]"
+      >
+        <h1 class="headertext">
+          Mahdollisuuksien<br />Maisemia<br />Ke 05/10/2022
+        </h1>
+        <nav class="navtext flex">
+          <a href="#">Navigaatio</a>
+        </nav>
+      </section>
+      <section class="section2">
+        <h2 class="header">Luovuus sinun työssäsi?</h2>
+        <figure>
+          <img
+            src="/pablo-heimplatz-ZODcBkEohk8-unsplash.jpg"
+            alt="kuvituskuva"
+          />
+        </figure>
+        <article class="section2article">
+          <h3>Haluatko osallistua keskusteluun?</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            aliquet ante non consequat rhoncus. Proin faucibus elit eget
+            fringilla volutpat. Suspendisse non efficitur elit, nec luctus
+            lorem. Donec purus metus, vulputate non velit sed, congue euismod
+            ipsum. In quis sapien dapibus purus auctor mattis in eget quam.
+            Vivamus dignissim accumsan viverra.
+          </p>
+          <button class="btn-blue">Aloita chat</button>
+        </article>
+      </section>
+      <section class="section3">
+        <article class="section3article">
+          <h3 class="textheader">Mikä tapahtuma?</h3>
+          <p class="text">
+            Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä eri
+            aloilla ja ammateissa otetaan käyttöön? Miten luovuuden huomiointi
+            edistää kestävää, hyvää työelämää ja tulevaisuutta?<br /><br />
+            Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden
+            puheenvuoroja että käydään eri alojen ammattilaisten ja
+            opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista
+            työelämässä.
+          </p>
+        </article>
+        <article class="section3article">
+          <h3 class="textheader">Missä ja milloin?</h3>
+          <p class="text">
+            Metropolia Ammattikorkeakoulun Myllypuron kampuksella (Helsinki)
+            keskiviikkona 5.10.2022 klo 8.00-15.00 Tapahtuma on maksuton, mutta
+            edellyttää sitovaa ennakkoilmoittautumista.
+          </p>
+        </article>
+      </section>
+      <section class="section4">
+        <video id="my-video" class="video-js vjs-theme-fantasy vjs-matrix">
+          <source src="stream.mp4" type="video/mp4" />
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading
+            to a web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+              >supports HTML5 video</a
+            >
+          </p>
+        </video>
+      </section>
+    </div>
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+    <script>
+      let myPlayer = document.querySelector(".video-js");
+
+      console.log(myPlayer);
+
+      videojs(myPlayer, {
+        controls: true,
+        autoplay: false,
+        preload: "auto",
+        fluid: true,
+        height: "264",
+        poster: "",
+      });
+    </script>
+  </body>
+</html>

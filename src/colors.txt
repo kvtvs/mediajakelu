@@ -1,0 +1,4 @@
+$powder-blue: #B8D8D8ff;
+$phlox: #D152F3ff;
+$gunmetal: #1D2635ff;
+$lapis-lazuli: #1E5884ff;
