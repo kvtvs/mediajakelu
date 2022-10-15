@@ -15,6 +15,10 @@ module.exports = {
     },
     extend: {
       colors: {
+        "my-pink": "#D152F3",
+        "my-blue": "#091221",
+        white: "#FFFFFF",
+        black: "#000000",
         lightgreen: "rgba(184, 216, 216, 1)",
         phlox: "rgba(209, 82, 243, 1)",
         gunmetal: "rgba(29, 38, 53, 1)",
