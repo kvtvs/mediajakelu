@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/@videojs/themes@1/dist/city/index.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .video-js .vjs-play-progress {
+        background: rgba(209, 82, 243, 1);
+      }
+      .video-js .vjs-control-bar,
+      .video-js .vjs-big-play-button,
+      .video-js .vjs-menu-button .vjs-menu-content {
+        /* IE8 - has no alpha support /
+        background-color: rgba(29, 38, 53, 1);
+        / Opacity: 1.0 = 100%, 0.0 = 0% */
+        background-color: rgba(29, 38, 53, 0.7);
+      }
+    </style>
+  </head>
+  <body class="bg-my-blue">
+    <div
+      class="chat-container bg-my-blue h-screen flex flex-col p-5 pt-20 md:flex-row md:flex-nowrap md:p-5 lg:p-20"
+    >
+      <a
+        href="index.html"
+        class="btn text-white absolute text-center top-4 left-4"
+        ><svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          ></path>
+        </svg>
+        Takaisin
+      </a>
+      <article
+        class="w-full m-auto max-w-xl md:m-0 md:mt-16 lg:mt-0 md:max-w-none md:w-2/3"
+      >
+        <video id="my-video" class="video-js vjs-theme-city">
+          <source
+            src="http://195.148.104.124:1935/jakelu/ryhmä4/playlist.m3u8"
+            type="application/x-mpegURL"
+          />
+          <!-- <source src="http://195.148.104.124:1935/jakelu/myStrea/playlist.m3u8" 
+        type="application/x-mpegURL"> -->
+        </video>
+        <p class="text-white text-2xl font-semibold mt-4 mb-4">
+          Projektin esittely striimi
+        </p>
+      </article>
+      <article
+        class="w-full m-auto max-w-xl relative mt-4 rounded-lg md:m-0 md:max-w-none md:w-1/3 md:mt-16 md:ml-3 lg:mt-0"
+      >
+        <header class="relative">
+          <h1
+            class="bg-white rounded-t-lg text-center text-2xl p-2 text-my-pink font-bold"
+          >
+            Chat
+          </h1>
+        </header>
+
+        <div class="chat-main">
+          <div class="chat-side">
+            <h2
+              id="room-name"
+              class="text-center hidden bg-white font-bold"
+            ></h2>
+            <h3 class="hidden">Users</h3>
+            <ul class="hidden" id="users"></ul>
+          </div>
+          <div class="">
+            <ul
+              class="chat-messages bg-white h-64 md:h-[calc(100vh-250px)] pb-5 overflow-scroll"
+            ></ul>
+          </div>
+
+          <form id="chat-form" class="w-full">
+            <label for="msg" class="sr-only">Your message</label>
+            <div class="flex items-center py-2 px-3 bg-white rounded-b-lg">
+              <!-- <button
+              type="button"
+              class="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            -->
+              <textarea
+                id="msg"
+                rows="1"
+                class="block mx-4 p-2.5 w-full text-sm text-black rounded-lg border border-my-blue focus:ring-my-pink"
+                placeholder="Kirjoita tähän..."
+                required
+              ></textarea>
+              <button
+                type="submit"
+                class="inline-flex justify-center p-2 text-tuscan-red rounded-full cursor-pointer hover:text-my-pink"
+              >
+                <svg
+                  class="w-6 h-6 rotate-90"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </article>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.1.2/qs.min.js"
+      integrity="sha512-LIxZvLf3cF72wbVxt+3ajwseTY82yjgyVvAN2nQ2B037JtZPaVZRkaukU/JmG1EkbFmD9a7Wx5VAcosed0/u6g=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="chat.js"></script>
+    <script src="menu.js"></script>
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+    <script src="video.js"></script>
+  </body>
+</html>
