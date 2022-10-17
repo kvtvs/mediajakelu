@@ -53,15 +53,37 @@
         </figure>
         <article class="section2article">
           <h3>Haluatko osallistua keskusteluun?</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            aliquet ante non consequat rhoncus. Proin faucibus elit eget
-            fringilla volutpat. Suspendisse non efficitur elit, nec luctus
-            lorem. Donec purus metus, vulputate non velit sed, congue euismod
-            ipsum. In quis sapien dapibus purus auctor mattis in eget quam.
-            Vivamus dignissim accumsan viverra.
-          </p>
-          <button class="btn-blue"><a href="chat.html">ALOITA CHAT</a></button>
+          <div class="w-2/3 m-auto">
+            <h1
+              class="text-white text-center font-semibold text-3xl mb-5"
+            >
+              Haluatko osallistua livestreamiin?
+            </h1>
+            <p>Valitse vain käyttäjätunnus ja huone johon haluat littyä!</p>
+            <form action="chat.html">
+              <div class="form">
+                <label for="username">Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Enter username..."
+                  required
+                />
+              </div>
+              <div class="form">
+                <label for="room">Room</label>
+                <select name="room" id="room">
+                  <option value="Room 1">Room 1</option>
+                  <option value="Room 2">Room2</option>
+                </select>
+              </div>
+              <button type="submit" class="bg-white rounded-lg mb-10">
+                Liity nyt
+              </button>
+            </form>
+          </div>
+        </div>
         </article>
       </section>
       <section class="section3">
